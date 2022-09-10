@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+/* RESET */
+button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  margin: 0;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* CSS */
+
+:root {
+  /* Colors */
+  /* 
+- Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%) 
+*/
+
+  --col_appBackground: hsl(207, 26%, 17%);
+  --col_elementsBackground: hsl(209, 23%, 22%);
+  --col_inputBackground: hsl(207, 26%, 17%);
+  --col_text: hsl(0, 0%, 100%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  margin: 0 0;
+  background: var(--col_appBackground);
+  font-family: 'Nunito Sans';
+  font-weight: 600;
+  color: var(--col_text);
 }
 
-.App-link {
-  color: #61dafb;
+button,
+a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--col_text);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p{
+  font-weight: 300;
 }
