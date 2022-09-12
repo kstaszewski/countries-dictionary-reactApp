@@ -1,0 +1,40 @@
+.container {
+    display: grid;
+    grid-template-rows: auto 145px;
+    align-items: flex-start;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--col_elementsBackground);
+}
+
+.flagContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.flagContainer img {
+    width: 100%;
+    height: auto;
+}
+
+.additionalInfo {
+    margin: 0 10px
+}
+
+.additionalInfo p:first-child {
+    margin: 15px 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.additionalInfo p{
+    margin: 5px 0;
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+
+.additionalInfo span {
+    font-weight: 600;
+}

@@ -29,6 +29,8 @@ a {
   --col_elementsBackground: hsl(209, 23%, 22%);
   --col_inputBackground: hsl(207, 26%, 17%);
   --col_text: hsl(0, 0%, 100%);
+  /* Margins */
+  --mar_containerContent: 0 80px;
 }
 
 body {
@@ -46,6 +48,6 @@ a {
   color: var(--col_text);
 }
 
-p{
+p {
   font-weight: 300;
 }

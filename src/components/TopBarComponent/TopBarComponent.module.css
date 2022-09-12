@@ -1,18 +1,21 @@
 .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     height: 80px;
     background-color: var(--col_elementsBackground);
 }
 
-.container h1 {
-    margin: 0 80px;
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: var(--mar_containerContent)
 }
 
-.modeSwitcher{
+.modeSwitcher {
     display: flex;
     gap: 10px;
-    margin: 0 80px;
 }

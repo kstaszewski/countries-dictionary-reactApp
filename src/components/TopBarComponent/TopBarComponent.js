@@ -7,9 +7,11 @@ function TopBarComponent () {
   return (
     <>
       <header className={css.container}>
-        <h1>Where in the world?</h1>
-        <div className={css.modeSwitcher}>
-          <button>{modeText}</button>
+        <div className={css.content}>
+          <h1>Where in the world?</h1>
+          <div className={css.modeSwitcher}>
+            <button>{modeText}</button>
+          </div>
         </div>
       </header>
       <Outlet />
