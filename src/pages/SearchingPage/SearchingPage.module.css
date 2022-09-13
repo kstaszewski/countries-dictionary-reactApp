@@ -13,6 +13,67 @@
     margin: var(--mar_containerContent);
 }
 
+.inputContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 400px;
+    height: 55px;
+    border-radius: 10px;
+    background-color: var(--col_elementsBackground);
+}
+
+.inputContainer svg {
+    margin-left: 30px;
+}
+
+.inputContainer input {
+    width: 100%;
+    margin: 0 10px;
+    border: none;
+    color: var(--col_text);
+    border-color: transparent;
+    background-color: transparent;
+    font-size: 0.925rem;
+}
+
+.inputContainer input::placeholder {
+    color: #bbb;
+}
+
+.inputContainer input:hover,
+.inputContainer input:active,
+.inputContainer input:focus,
+.selectContainer select:hover,
+.selectContainer select:active,
+.selectContainer select:focus {
+    border: none;
+    outline: none
+}
+
+.selectContainer {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    color: var(--col_text);
+    background-color: var(--col_elementsBackground);
+}
+
+.selectContainer select {
+    width: 100%;
+    margin: 0 10px;
+    border: none;
+    color: var(--col_text);
+    background-color: transparent;
+}
+
+.selectContainer select * {
+    background-color: var(--col_elementsBackground);
+}
+
 .countriesList {
     display: flex;
     gap: 80px;
@@ -20,6 +81,73 @@
     margin: var(--mar_containerContent);
 }
 
-.CountryComponent{
+.CountryComponent {
     flex: 0 1 20%;
+}
+
+
+
+.customSelect {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    color: #888;
+    margin-top: 25px;
+}
+
+.customSelect select {
+    display: block;
+    width: 250px;
+    min-height: 35px;
+    background: #cbe7ff;
+    border-radius: 3px;
+    border: 2px solid #2196F3;
+    outline: none;
+    padding: 0 20px 0 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+.customSelect::after {
+    content: '';
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #222;
+    display: inline-block;
+    border-radius: 2px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.customSelect .selectorOptions {
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    background: #11436b;
+    color: #fff;
+    border-radius: 4px;
+    z-index: 1;
+    width: 96%;
+    position: absolute;
+    left: 2%;
+    top: 35%;
+}
+
+.customSelect .selectorOptions li {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.customSelect .selectorOptions li:hover {
+    background: #03A9F4;
 }
