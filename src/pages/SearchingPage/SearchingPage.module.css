@@ -43,35 +43,9 @@
 
 .inputContainer input:hover,
 .inputContainer input:active,
-.inputContainer input:focus,
-.selectContainer select:hover,
-.selectContainer select:active,
-.selectContainer select:focus {
+.inputContainer input:focus {
     border: none;
     outline: none
-}
-
-.selectContainer {
-    display: flex;
-    align-items: center;
-    width: 150px;
-    height: 55px;
-    border: none;
-    border-radius: 10px;
-    color: var(--col_text);
-    background-color: var(--col_elementsBackground);
-}
-
-.selectContainer select {
-    width: 100%;
-    margin: 0 10px;
-    border: none;
-    color: var(--col_text);
-    background-color: transparent;
-}
-
-.selectContainer select * {
-    background-color: var(--col_elementsBackground);
 }
 
 .countriesList {
@@ -85,69 +59,64 @@
     flex: 0 1 20%;
 }
 
-
-
-.customSelect {
+.selectContainer {
     position: relative;
     display: inline-block;
-    font-size: 14px;
-    color: #888;
-    margin-top: 25px;
 }
 
-.customSelect select {
+.selectContainer select {
     display: block;
-    width: 250px;
-    min-height: 35px;
-    background: #cbe7ff;
-    border-radius: 3px;
-    border: 2px solid #2196F3;
+    width: 200px;
+    height: 55px;
+    border-radius: 10px;
     outline: none;
-    padding: 0 20px 0 10px;
-    margin-top: 5px;
+    padding: 0 10px;
     cursor: pointer;
     appearance: none;
+    background-color: var(--col_elementsBackground);
+    border: none;
+    color: var(--col_text);
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
 }
 
-.customSelect::after {
+.selectContainer::after {
+    position: absolute;
     content: '';
     border-width: 5px;
     border-style: solid;
     border-color: transparent;
-    border-top-color: #222;
+    border-top-color: var(--col_text);
     display: inline-block;
     border-radius: 2px;
-    position: absolute;
     right: 10px;
-    bottom: 10px;
+    bottom: 20px;
 }
 
-.customSelect .selectorOptions {
+.selectContainer .selectorOptions {
     list-style: none;
     padding: 5px 0;
     margin: 0;
-    background: #11436b;
-    color: #fff;
-    border-radius: 4px;
+    background: var(--col_elementsBackground);
+    color: var(--col_text);
+    border-radius: 10px;
     z-index: 1;
-    width: 96%;
+    width: 100%;
     position: absolute;
-    left: 2%;
-    top: 35%;
+    left: 0;
+    top: 110%;
 }
 
-.customSelect .selectorOptions li {
+.selectContainer .selectorOptions li {
     height: 35px;
     display: flex;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 10px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
-.customSelect .selectorOptions li:hover {
-    background: #03A9F4;
+.selectContainer .selectorOptions li:hover {
+    background: var(--col_appBackground)
 }

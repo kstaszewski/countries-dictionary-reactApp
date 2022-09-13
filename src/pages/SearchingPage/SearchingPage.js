@@ -6,7 +6,7 @@ import {fetchAllData} from '../../api/api';
 function SearchingPage () {
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
-    const [selectedRegion, setSelectedRegion] = useState('all');
+    const [filters, setFilters] = useState({region: 'all', text: ''});
     const filterByRegionRef = useRef(null);
 
     useEffect(() => {
@@ -22,6 +22,11 @@ function SearchingPage () {
         };
         fetchData();
     }, []);
+
+    useEffect(() => {
+        handleFilter();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [filters]);
 
     const handleSelectRegionClick = e => {
         const controller = new AbortController();
@@ -39,9 +44,7 @@ function SearchingPage () {
                     e.stopPropagation();
                     select.value = option.value;
                     selector.value = option.value;
-                    console.log(option.value);
-                    setSelectedRegion(option.value);
-                    handleSelectRegionChange(option.value);
+                    setFilters({...filters, region: option.value});
                     dropDown.remove();
                     controller.abort();
                 });
@@ -58,9 +61,12 @@ function SearchingPage () {
         }
     };
 
-    const handleSelectRegionChange = chosenRegion => {
-        if (chosenRegion === 'all') return setFilteredData(data);
-        setFilteredData(data.filter(el => el.region.toLowerCase() === chosenRegion));
+    const handleFilter = () => {
+        setFilteredData(data.filter(el =>
+            (filters.region !== 'all' ? (el.region.toLowerCase() === filters.region) : true)
+            &&
+            (filters.text !== '' ? (el.name.common.toLowerCase().includes(filters.text.toLowerCase()) || el.name.official.toLowerCase().includes(filters.text.toLowerCase())) : true)
+        ));
     };
 
     return (
@@ -68,12 +74,11 @@ function SearchingPage () {
             <div className={css.container}>
                 <div className={css.inputs}>
                     <div className={css.inputContainer}>
-                        <input placeholder='Search for a country...'></input>
+                        <input placeholder='Search for a country...' onChange={e => setFilters({...filters, text: e.target.value})}></input>
                     </div>
-                    {/* <div className={css.selectContainer}> */}
-                    <label ref={filterByRegionRef} className={css.customSelect} onClick={e => handleSelectRegionClick(e)}>
+                    <label ref={filterByRegionRef} className={css.selectContainer} onClick={e => handleSelectRegionClick(e)}>
                         <select >
-                            <option value="all">{selectedRegion === 'all' ? "Filter by Region" : "All"}</option>
+                            <option value="all">{filters.region === 'all' ? "Filter by Region" : "All"}</option>
                             <option value="africa">Africa</option>
                             <option value="americas">America</option>
                             <option value="asia">Asia</option>
@@ -81,7 +86,6 @@ function SearchingPage () {
                             <option value="oceania">Oceania</option>
                         </select>
                     </label>
-                    {/* </div> */}
                 </div>
                 <div className={css.countriesList}>
                     {filteredData.length > 0 &&

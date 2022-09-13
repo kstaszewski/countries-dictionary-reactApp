@@ -47,6 +47,11 @@ a {
   color: var(--col_text);
 }
 
-p {
+p, 
+li {
   font-weight: 300;
+}
+
+li {
+  font-size: 0.9rem;
 }
