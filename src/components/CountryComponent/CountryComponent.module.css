@@ -7,6 +7,10 @@
     background-color: var(--col_elementsBackground);
 }
 
+.container:hover {
+    background-color: var(--col_elementsBackgroundHover);
+}
+
 .flagContainer {
     display: flex;
     align-items: center;

@@ -10,7 +10,7 @@
     margin: var(--mar_containerContent)
 }
 
-.returnButtonContainer button {
+.returnButtonContainer a {
     padding: 20px 30px;
     border-radius: var(--bor_contentRadius);
     background-color: var(--col_elementsBackground);
@@ -66,8 +66,13 @@
     margin: 20px 0;
 }
 
-.borderCountries button {
+.borderCountries a {
     padding: 10px 20px;
     border-radius: var(--bor_contentRadius);
     background-color: var(--col_elementsBackground);
+}
+
+.borderCountries a:hover,
+.returnButtonContainer a:hover {
+    background-color: var(--col_elementsBackgroundHover);
 }

@@ -53,7 +53,7 @@ function DetailsPage (props) {
         <>
             <div className={css.container}>
                 <div className={css.returnButtonContainer}>
-                    <Link to="/"><button>Back to list</button></Link>
+                    <Link to="/">Back to list</Link>
                 </div>
                 {data &&
                     <div className={css.innerContainer}>
@@ -71,7 +71,7 @@ function DetailsPage (props) {
                                 }
                             </div>
                             <div className={css.borderCountries}>
-                                {borderCountriesData.map((item, index) => <Link to={`/${item.name.common.toLowerCase()}`} state={{data: item}} key={index}><button >{item.name.common}</button></Link>)}
+                                {borderCountriesData.map((item, index) => <Link to={`/${item.name.common.toLowerCase()}`} state={{data: item}} key={index}>{item.name.common}</Link>)}
                             </div>
                         </div>
                     </div>

@@ -26,6 +26,7 @@ a {
 
   --col_appBackground: hsl(207, 26%, 17%);
   --col_elementsBackground: hsl(209, 23%, 22%);
+  --col_elementsBackgroundHover: hsl(208, 34%, 26%);
   --col_inputBackground: hsl(207, 26%, 17%);
   --col_text: hsl(0, 0%, 100%);
   /* Margins */
