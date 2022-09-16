@@ -5,6 +5,8 @@
     border-radius: var(--bor_contentRadius);
     overflow: hidden;
     background-color: var(--col_elementsBackground);
+    box-shadow: var(--shad_contentShadows);
+    transition: background-color .3s ease;
 }
 
 .container:hover {

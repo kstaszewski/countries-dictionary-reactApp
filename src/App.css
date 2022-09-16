@@ -29,10 +29,13 @@ a {
   --col_elementsBackgroundHover: hsl(208, 34%, 26%);
   --col_inputBackground: hsl(207, 26%, 17%);
   --col_text: hsl(0, 0%, 100%);
+  --col_textHover: hsl(0, 0%, 66%);
   /* Margins */
   --mar_containerContent: 0 80px;
   /* Borders */
   --bor_contentRadius: 10px;
+  /* Shadows */
+  --shad_contentShadows: 0px 8px 24px -15px rgba(0, 0, 0, 1);
 }
 
 body {
@@ -41,6 +44,13 @@ body {
   font-family: 'Nunito Sans';
   font-weight: 600;
   color: var(--col_text);
+  transition: background-color 0.3s ease;
+}
+
+div,
+header,
+footer{
+  transition: background-color 0.3s ease;
 }
 
 button,
@@ -48,13 +58,20 @@ a {
   font-size: 1rem;
   font-weight: 600;
   color: var(--col_text);
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-p, 
+p,
 li {
   font-weight: 300;
+  transition: color 0.3s ease;
 }
 
 li {
   font-size: 0.9rem;
+}
+
+h1{
+  transition: color 0.3s ease;
 }

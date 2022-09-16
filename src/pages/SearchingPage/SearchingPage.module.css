@@ -21,6 +21,7 @@
     height: 55px;
     border-radius: var(--bor_contentRadius);
     background-color: var(--col_elementsBackground);
+    box-shadow: var(--shad_contentShadows);
 }
 
 .inputContainer svg {
@@ -38,7 +39,7 @@
 }
 
 .inputContainer input::placeholder {
-    color: #bbb;
+    color: var(--col_text);
 }
 
 .inputContainer input:hover,
@@ -48,20 +49,12 @@
     outline: none
 }
 
-.countriesList {
-    display: flex;
-    gap: 80px;
-    flex-wrap: wrap;
-    margin: var(--mar_containerContent);
-}
-
-.CountryComponent {
-    flex: 0 1 20%;
-}
-
 .selectContainer {
     position: relative;
     display: inline-block;
+    border-radius: var(--bor_contentRadius);
+    box-shadow: var(--shad_contentShadows);
+
 }
 
 .selectContainer select {
@@ -79,6 +72,11 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
+    transition: background-color 0.3s ease;
+}
+
+.selectContainer select:hover {
+    background-color: var(--col_elementsBackgroundHover);
 }
 
 .selectContainer::after {
@@ -106,6 +104,7 @@
     position: absolute;
     left: 0;
     top: 110%;
+    box-shadow: var(--shad_contentShadows);
 }
 
 .selectContainer .selectorOptions li {
@@ -118,5 +117,16 @@
 }
 
 .selectContainer .selectorOptions li:hover {
-    background: var(--col_appBackground)
+    background: var(--col_elementsBackgroundHover)
+}
+
+.countriesList {
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+    margin: var(--mar_containerContent);
+}
+
+.CountryComponent {
+    flex: 0 1 20%;
 }

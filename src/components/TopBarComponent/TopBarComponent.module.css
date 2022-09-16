@@ -19,3 +19,11 @@
     display: flex;
     gap: 10px;
 }
+
+.modeSwitcher button {
+    transition: color .3s ease;
+}
+
+.modeSwitcher button:hover {
+    color: var(--col_textHover);
+}
