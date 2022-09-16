@@ -2,7 +2,7 @@
     display: grid;
     grid-template-rows: auto min-content 10px;
     align-items: flex-end;
-    border-radius: 5px;
+    border-radius: var(--bor_contentRadius);
     overflow: hidden;
     background-color: var(--col_elementsBackground);
 }

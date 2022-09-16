@@ -30,6 +30,8 @@ a {
   --col_text: hsl(0, 0%, 100%);
   /* Margins */
   --mar_containerContent: 0 80px;
+  /* Borders */
+  --bor_contentRadius: 10px;
 }
 
 body {
